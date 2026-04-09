@@ -126,13 +126,13 @@ function seedData() {
     { phase: "Phase 1", title: "TFT 구성 및 킥오프", startDate: "2026-04-01", endDate: "2026-05-31", owner: "학과장", status: "진행중", priority: "높음" },
     { phase: "Phase 1", title: "4주기 미흡사항 분석 및 개선계획 수립", startDate: "2026-04-01", endDate: "2026-06-30", owner: "전체 TFT", status: "진행중", priority: "높음" },
     { phase: "Phase 1", title: "D6 실습 규정 제정", startDate: "2026-04-01", endDate: "2026-06-30", owner: "실습위원회", status: "진행중", area: "영역5", priority: "높음" },
-    { phase: "Phase 2", title: "5주기 인증기준 교과목 매핑", startDate: "2026-07-01", endDate: "2026-12-31", owner: "교육과정편성위원회", status: "예정", priority: "높음" },
-    { phase: "Phase 2", title: "D7 전자저널 DB 구독 계약", startDate: "2026-07-01", endDate: "2026-12-31", owner: "행정조교", status: "예정", area: "영역6", priority: "보통" },
-    { phase: "Phase 2", title: "D4/D5 교원 자격기준 충족 계획 실행", startDate: "2026-07-01", endDate: "2027-06-30", owner: "학과장", status: "예정", area: "영역4", priority: "높음" },
-    { phase: "Phase 3", title: "자체평가 보고서 초안 작성", startDate: "2027-01-01", endDate: "2027-06-30", owner: "영역별 TFT팀장", status: "예정", priority: "높음" },
-    { phase: "Phase 3", title: "모의 현장방문 평가", startDate: "2027-07-01", endDate: "2027-09-30", owner: "전체 TFT", status: "예정", priority: "높음" },
-    { phase: "Phase 4", title: "자체평가 보고서 최종본 제출", startDate: "2027-10-01", endDate: "2028-03-31", owner: "학과장", status: "예정", priority: "높음" },
-    { phase: "Phase 4", title: "현장방문 평가 대응", startDate: "2028-04-01", endDate: "2028-06-30", owner: "전체 TFT", status: "예정", priority: "높음" },
+    { phase: "Phase 2", title: "5주기 인증기준 교과목 매핑", startDate: "2026-09-01", endDate: "2026-12-31", owner: "교육과정편성위원회", status: "예정", priority: "높음" },
+    { phase: "Phase 2", title: "D7 전자저널 DB 구독 계약", startDate: "2026-09-01", endDate: "2026-12-31", owner: "행정조교", status: "예정", area: "영역6", priority: "보통" },
+    { phase: "Phase 2", title: "D4/D5 교원 자격기준 충족 계획 실행", startDate: "2026-09-01", endDate: "2027-01-31", owner: "학과장", status: "예정", area: "영역4", priority: "높음" },
+    { phase: "Phase 3", title: "자체평가 보고서 초안 작성", startDate: "2027-02-01", endDate: "2027-03-31", owner: "영역별 TFT팀장", status: "예정", priority: "높음" },
+    { phase: "Phase 3", title: "모의 현장방문 평가 및 증빙자료 최종 점검", startDate: "2027-03-01", endDate: "2027-04-30", owner: "전체 TFT", status: "예정", priority: "높음" },
+    { phase: "Phase 4", title: "자체평가 보고서 최종본 제출", startDate: "2027-05-01", endDate: "2027-05-30", owner: "학과장", status: "예정", priority: "높음" },
+    { phase: "Phase 4", title: "현장방문 평가 대응", startDate: "2027-06-01", endDate: "2027-06-30", owner: "전체 TFT", status: "예정", priority: "높음" },
   ];
   for (const s of scheduleData) {
     storage.createSchedule(s as any);

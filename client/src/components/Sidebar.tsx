@@ -63,10 +63,10 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="px-4 py-3 border-t border-[hsl(var(--sidebar-border))]">
         <p className="text-[10px] text-[hsl(var(--sidebar-muted))]">
-          인증기간: 2025.6.12~2028.6.11
+          인증기간: 2025.6~2027.6 (3년)
         </p>
         <p className="text-[10px] text-[hsl(var(--sidebar-muted))] mt-0.5">
-          목표: 5년 인증 (2028)
+          보고서 마감: 2027.5.30
         </p>
       </div>
     </>

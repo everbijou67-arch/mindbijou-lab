@@ -76,8 +76,10 @@ export default function Dashboard() {
   const checkProgress = checkStats ? Math.round((checkStats.checked / checkStats.total) * 100) : 0;
 
   const today = new Date();
-  const targetDate = new Date("2028-06-11");
-  const daysLeft = Math.ceil((targetDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  const reportDeadline = new Date("2027-05-30");
+  const accredExpiry = new Date("2027-06-11");
+  const daysToReport = Math.ceil((reportDeadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  const daysToExpiry = Math.ceil((accredExpiry.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 
   return (
     <div className="p-5 lg:p-6 space-y-5 max-w-7xl mx-auto">
@@ -86,13 +88,18 @@ export default function Dashboard() {
         <div>
           <h1 className="text-xl font-bold text-foreground">5주기 인증평가 현황</h1>
           <p className="text-sm text-muted-foreground mt-0.5">
-            한영대학교 간호학과 · 목표: 5년 인증 (2028)
+            한영대학교 간호학과 · 목표: 5년 인증
           </p>
         </div>
-        <div className="text-right">
-          <div className="text-xs text-muted-foreground">인증 만료까지</div>
-          <div className="text-2xl font-bold text-primary">{daysLeft}일</div>
-          <div className="text-xs text-muted-foreground">2028.6.11 기준</div>
+        <div className="text-right space-y-1">
+          <div>
+            <div className="text-xs text-muted-foreground">보고서 제출까지</div>
+            <div className={`text-2xl font-bold ${daysToReport <= 180 ? 'text-red-600' : 'text-primary'}`}>{daysToReport}일</div>
+            <div className="text-xs text-muted-foreground">2027.5.30 마감</div>
+          </div>
+          <div>
+            <div className="text-[10px] text-muted-foreground">인증 만료: {daysToExpiry}일 (2027.6.11)</div>
+          </div>
         </div>
       </div>
 
@@ -252,10 +259,10 @@ export default function Dashboard() {
         <CardContent className="px-4 pb-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { phase: "Phase 1", period: "2026.04~2026.06", title: "기반 구축", items: ["TFT 구성·킥오프", "미흡사항 개선착수", "D6 규정 제정"], status: "진행중" },
-              { phase: "Phase 2", period: "2026.07~2026.12", title: "체계 강화", items: ["교과목 매핑", "D4/D5 교원 충족", "D7 전자저널 구독"], status: "예정" },
-              { phase: "Phase 3", period: "2027.01~2027.09", title: "자체평가 작성", items: ["보고서 초안", "모의 현장방문", "증빙자료 완비"], status: "예정" },
-              { phase: "Phase 4", period: "2027.10~2028.06", title: "최종 제출", items: ["보고서 제출", "현장방문 대응", "5년 인증 목표"], status: "예정" },
+              { phase: "Phase 1", period: "2026.04~2026.08", title: "기반 구축", items: ["TFT 구성·킥오프", "미흡사항 개선착수", "D6 규정 제정"], status: "진행중" },
+              { phase: "Phase 2", period: "2026.09~2027.01", title: "체계 강화", items: ["교과목 매핑", "D4/D5 교원 충족", "D7 전자저널 구독"], status: "예정" },
+              { phase: "Phase 3", period: "2027.02~2027.04", title: "자체평가 작성", items: ["보고서 초안 작성", "모의 현장방문 평가", "증빙자료 최종 점검"], status: "예정" },
+              { phase: "Phase 4", period: "2027.05~2027.05.30", title: "최종 제출", items: ["보고서 최종본 제출", "현장방문 대응 준비", "5년 인증 목표"], status: "예정" },
             ].map((ph, i) => (
               <div key={ph.phase} className="relative">
                 <div className={`p-3 rounded-lg border ${ph.status === "진행중" ? "border-primary/30 bg-primary/5" : "border-border bg-muted/30"}`}>
